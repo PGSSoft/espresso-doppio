@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        tools:text="test text" />
+
+    <Button
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:id="@+id/dialog_start_button"
+        android:layout_marginTop="50dp"
+        android:text="@string/start_dialog_button_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:visibility="gone"
+        tools:visibility="visible"
+        android:background="@android:color/holo_red_dark"
+        android:id="@+id/dialog_start_button_2nd"
+        android:layout_marginTop="50dp"
+        android:text="@string/start_dialog_button_text"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/text_info_select"
+        android:text="@string/select_item_info"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
