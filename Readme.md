@@ -6,10 +6,11 @@ This library was designed to make implementing end-to-end test suites easier. It
 ### Usage ###
 
 As usual - add it to your build.gradle:
-
+```
 dependencies {
     androidTestCompile 'com.pgs-soft:espressodoppio:1.0.0'
 }
+```
 
 #### Idling resources
 Every Espresso doppio IdlingResource extends BaseIdlingResource. This class provides default implementation for timeout configuration, idle state transition and shortcuts for registration/unregistration. **Provided IdlingResource implementations are designed in way that does not require any additional implementation in main source set for testing synchronization purposes.** Espresso doppio way of testing is based on things that are visible for user - views (or views containers like Activities or Fragments),  there is no need to monitor requests in background if such request result will provide visual change.
