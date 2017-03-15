@@ -1,4 +1,4 @@
-##Espresso doppio
+## Espresso doppio
 Tools for Espresso based UI tests
 
 This library was designed to make implementing end-to-end test suites easier. It approaches synchronization problem in way that allows keep main source set unpolluted from test code - synchronization is based on visible components. Provided IdlingResources can wait for particular View, Fragment or Activity, that matches provided Matcher.
@@ -15,7 +15,7 @@ dependencies {
 #### Idling resources
 Every Espresso doppio IdlingResource extends BaseIdlingResource. This class provides default implementation for timeout configuration, idle state transition and shortcuts for registration/unregistration. **Provided IdlingResource implementations are designed in way that does not require any additional implementation in main source set for testing synchronization purposes.** Espresso doppio way of testing is based on things that are visible for user - views (or views containers like Activities or Fragments),  there is no need to monitor requests in background if such request result will provide visual change.
 
-#####IdlingResource that waits for view:
+##### IdlingResource that waits for view:
 ```java
 final ViewIdlingResource viewIdlingResource = new ViewIdlingResource(
     both(withId(R.id.item_recycler)).and(DoppioMatchers.recyclerWithItems)
@@ -38,14 +38,14 @@ waitForIdle(viewIdlingResource, new Runnable() {
 });
 ```
 
-#####IdlingResource that waits for Activity:
+##### IdlingResource that waits for Activity:
 ```java
 //Waits for MainActivity to be RESUMED
 final ActivityIdlingResource activityIdlingResource = new ActivityIdlingResource(MainActivity.class);
 //always remember about unregister!
 ```
 
-#####IdlingResource that waits for Fragment to be added
+##### IdlingResource that waits for Fragment to be added
 ```java
 //Waits for Fragment with provided tag
 final FragmentIdlingResource res2 = new FragmentIdlingResource(YesNoDialog.FRAGMENT_TAG).register();
@@ -59,7 +59,7 @@ final FragmentIdlingResource res = new FragmentIdlingResource(
         ).register();
 ```
 
-#####IdlingResource that waits until timeout, should be used as last resort. Such timeout can make your tests flaky!
+##### IdlingResource that waits until timeout, should be used as last resort. Such timeout can make your tests flaky!
 ```java
 final TimeoutIdlingResource timeout = new TimeoutIdlingResource(6000).register();
 ```
